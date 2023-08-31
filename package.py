@@ -26,7 +26,7 @@ def commands():
     env.PATH.append("{root}/bin")
     env.LD_LIBRARY_PATH.append("{root}/lib64")
     env.PYTHONPATH.append(
-        "{root}/lib/python{resolve.python.version.major}.{resolve.python.version.minor}/site-packages"
+        "{root}/lib64/python{resolve.python.version.major}.{resolve.python.version.minor}/site-packages"
     )
 
     if building:
