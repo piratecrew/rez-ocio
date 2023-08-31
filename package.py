@@ -1,6 +1,6 @@
 name = "ocio"
 
-version = "2.2.0"
+version = "2.2.1"
 
 variants = [
     ["platform-linux", "python-3.7"],
