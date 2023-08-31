@@ -1,9 +1,10 @@
 name = "ocio"
 
-version = "2.1.0"
+version = "2.1.2"
 
 variants = [
-    ["platform-linux", "python-3.7"]
+    ["platform-linux", "python-3.7"],
+    ["platform-linux", "python-3.9"],
 ]
 
 @early()
@@ -23,9 +24,9 @@ build_command = "make -f {root}/Makefile {install}"
 def commands():
     env.OCIO_ROOT = '{root}'
     env.PATH.append("{root}/bin")
-    env.LD_LIBRARY_PATH.append("{root}/lib")
+    env.LD_LIBRARY_PATH.append("{root}/lib64")
     env.PYTHONPATH.append(
-        "{root}/lib/python{resolve.python.version.major}.{resolve.python.version.minor}/site-packages"
+        "{root}/lib64/python{resolve.python.version.major}.{resolve.python.version.minor}/site-packages"
     )
 
     if building:
