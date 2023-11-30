@@ -5,6 +5,7 @@ version = "2.1.2"
 variants = [
     ["platform-linux", "python-3.7"],
     ["platform-linux", "python-3.9"],
+    ["platform-linux", "python-3.10"],
 ]
 
 @early()
@@ -14,7 +15,7 @@ def build_requires():
     requirements = ["cmake-3.15+<4"]
     from subprocess import check_output
     gcc_major = int(check_output(r"gcc -dumpversion | cut -f1 -d.", shell=True).strip().decode())
-    if gcc_major < 9:
+    if gcc_major < 6:
         requirements.append("devtoolset-9")
 
     return requirements
