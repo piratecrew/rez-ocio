@@ -10,7 +10,7 @@ variants = [
 
 private_build_requires = [
     "cmake-3.15+<4",
-    "gcctoolset-9"
+    "gcc-11"
 ]
 
 build_command = "make -f {root}/Makefile {install}"
